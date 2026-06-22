@@ -1,7 +1,7 @@
-# 🔍 Port Scanner (`port_scanner.py`)
+# Local Port Scout
 
-## 💡 What is it?
-This tool is a virtual port scanner. It connects to a target computer and checks which **ports** (virtual doorways) are open and waiting for connections.
+## What it does
+Local Port Scout checks a local or private host for open TCP ports. It is intentionally scoped for safe lab use and local network learning.
 
 ---
 
