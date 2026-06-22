@@ -1,16 +1,11 @@
-# Local Port Scout
+﻿# Local Port Scout
 
 ## What it does
 Local Port Scout checks a local or private host for open TCP ports. It is intentionally scoped for safe lab use and local network learning.
 
 ---
 
-## 🚪 The Analogy
-Imagine you are walking around a large castle with 65,535 doors. Some doors are locked and sealed, some don't exist, and some are wide open with guards waiting inside to help visitors. A **Port Scanner** is like walking up to a list of doors and gently turning the handle to see if it turns (open) or if it is locked tight (closed).
-
----
-
-## ⚙️ How it Works
+## How it works
 1. **IP Address & Ports**: A computer has one IP address (like a street address) but thousands of ports (like apartment numbers). Websites listen on port 80/443, email on port 25, etc.
 2. **The Handshake (TCP)**: The script uses Python's standard `socket` library to attempt a quick connection to a port. This is called a **TCP Three-Way Handshake**.
 3. **The Result**: 
@@ -20,7 +15,7 @@ Imagine you are walking around a large castle with 65,535 doors. Some doors are 
 
 ---
 
-## 🛠️ Code Breakdown
+## Implementation notes
 
 * `socket.socket(socket.AF_INET, socket.SOCK_STREAM)`: Creates a new network socket using IPv4 and TCP.
 * `s.connect_ex((host, port))`: Attempts to connect. Unlike `connect()`, which crashes the script if it fails, `connect_ex` returns a status number. A value of `0` means success (port is open).
@@ -28,9 +23,11 @@ Imagine you are walking around a large castle with 65,535 doors. Some doors are 
 
 ---
 
-## 🚀 How to Run
-Run the script and enter the host and port range you want to scan:
+## Running it
+Run the scanner against a local or private host:
 ```bash
 python port_scanner.py
 ```
-*Note: For safety, this tool is restricted to scanning local hosts (like `localhost` or `127.0.0.1`) to prevent accidental scanning of remote systems.*
+*Note: For safety, This script is restricted to scanning local hosts (like `localhost` or `127.0.0.1`) to prevent accidental scanning of remote systems.*
+
+
